@@ -55,15 +55,12 @@ const AuthBaseForm: FC<AuthBaseFormProps> = (props) => {
       {errors.message && <p className="error">{errors.message}</p>}
 
       <button type="submit"
-              style={{marginTop: '20px'}}
               disabled={isSubmitting}>
         Submit
       </button>
       <button
         type="button"
-        className="m-l-15 outline"
         onClick={handleReset}
-        style={{marginTop: '20px'}}
         disabled={!dirty || isSubmitting}
       >
         Reset

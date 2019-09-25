@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useCallback} from "react";
+import React, {useEffect, useState, useCallback, FC} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import {AuthContext, getUsrData} from "./core/auth";
@@ -10,7 +10,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import {firebaseAuth} from "./core/firebase";
 import {User} from "./types/auth";
 
-export default function App() {
+export const App: FC = () => {
   const [user, setUser] = useState<User | null>(null);
 
   const changeUser = useCallback((user) => {
@@ -51,4 +51,4 @@ export default function App() {
       </AuthContext.Provider>
     </ErrorBoundary>
   );
-}
+};

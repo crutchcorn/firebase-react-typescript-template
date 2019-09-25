@@ -97,7 +97,7 @@ export const TextArea: FC<TextAreaProps & HTMLTextAreaElement> = ({
         />
             </div>
             {errorBool && (
-                <p style={{margin: "10px 0 0"}} className="error">
+                <p className="error">
                     {" "}
                     {errorBool}{" "}
                 </p>
