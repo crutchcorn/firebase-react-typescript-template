@@ -1,8 +1,11 @@
 {
   "name": "firebase-react-templ",
-  "version": "1.0.0",
-  "description": "`cd functions && npm i && npm run serve`",
+  "version": "0.0.2",
+  "description": "A baseline React template with Firebase functions, database rules, simple auth, and general project structure",
   "main": "index.js",
+  "author": "Corbin Crutchley <crutchcorn@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/crutchcorn/firebase-react-templ",
   "scripts": {
     "serve": "run-s build \"firebase serve\"",
     "serve:functions": "cd functions && npx -p node@6.11.5 -- npm run serve",
@@ -16,6 +19,13 @@
     "runbuild:client": "npm --prefix ./client-src run build",
     "copy:client": "cd client-src/build && copyfiles -a \"**/*\" ../../public/ && cd ../.."
   },
+  "dependencies": {
+    "copyfiles": "^2.1.1"
+  },
+  "devDependencies": {
+    "node": "^8.16.1",
+    "npm-run-all": "^4.1.5"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/crutchcorn/firebase-react-templ"
@@ -27,15 +37,5 @@
     "functions",
     "hosting",
     "auth"
-  ],
-  "author": "Corbin Crutchley <crutchcorn@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/crutchcorn/firebase-react-templ",
-  "devDependencies": {
-    "node": "^8.16.1",
-    "npm-run-all": "^4.1.5"
-  },
-  "dependencies": {
-    "copyfiles": "^2.1.1"
-  }
+  ]
 }
