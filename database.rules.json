@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "users": {
+      "$userId": {
+        ".read": "auth.uid == $userId",
+        ".write": "(newData.exists() && auth.uid!=null && !data.exists()) || (data.exists() && (auth.uid == $userId))"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "firebase-react-templ-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.7",
+    "@types/react": "16.9.3",
+    "@types/react-dom": "16.9.0",
+    "@types/react-router-dom": "^4.3.5",
+    "@types/yup": "^0.26.24",
+    "arwes": "^1.0.0-alpha.5",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "eslint-config-react-app": "^5.0.2",
+    "firebase": "^6.6.2",
+    "formik": "^1.5.8",
+    "query-string": "^6.8.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.1.0",
+    "react-scripts": "3.1.2",
+    "rxjs": "^6.5.3",
+    "typescript": "3.6.3",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "globals": {
+      "google": true
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "not ie <= 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

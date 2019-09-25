@@ -1,0 +1,41 @@
+{
+  "name": "firebase-react-templ",
+  "version": "1.0.0",
+  "description": "`cd functions && npm i && npm run serve`",
+  "main": "index.js",
+  "scripts": {
+    "serve": "run-s build \"firebase serve\"",
+    "serve:functions": "cd functions && npx -p node@6.11.5 -- npm run serve",
+    "serve:client": "npm --prefix ./client-src run start",
+    "setup": "run-p setup:*",
+    "setup:functions": "cd functions && npm i",
+    "setup:client": "cd client-src && npm i",
+    "build": "run-p build:*",
+    "build:client": "run-s runbuild:client copy:client",
+    "build:functions": "npm --prefix ./functions run build",
+    "runbuild:client": "npm --prefix ./client-src run build",
+    "copy:client": "cd client-src/build && copyfiles -a \"**/*\" ../../public/ && cd ../.."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crutchcorn/firebase-react-templ"
+  },
+  "keywords": [
+    "firebase",
+    "react",
+    "template",
+    "functions",
+    "hosting",
+    "auth"
+  ],
+  "author": "Corbin Crutchley <crutchcorn@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/crutchcorn/firebase-react-templ",
+  "devDependencies": {
+    "node": "^8.16.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "copyfiles": "^2.1.1"
+  }
+}
