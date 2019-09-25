@@ -42,17 +42,15 @@ const Login: FC<RouteComponentProps> = ({location}) => {
     if (!AuthForm) return null;
 
     return (
-        <div style={{padding: 20, height: "calc(100vh - 20px)"}}>
-            <AuthForm
-                className="full-width"
-                user={{
-                    password: "",
-                    passwordconfirm: "",
-                    email: ""
-                }}
-                register={isRegisterPage}
-            />
-        </div>
+        <AuthForm
+            className="full-width"
+            user={{
+                password: "",
+                passwordconfirm: "",
+                email: ""
+            }}
+            register={isRegisterPage}
+        />
     );
 };
 

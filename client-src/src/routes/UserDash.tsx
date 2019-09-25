@@ -3,7 +3,7 @@ import AppHeaderNav from "../components/AppHeaderNav";
 import {Route, RouteComponentProps, Switch, withRouter} from "react-router-dom";
 import {ComponentRouteListItem} from "../components/AppHeaderNav";
 import {AuthContext, filterRouteAllows, logout} from "../core/auth";
-import Home from "./public-pages/Home";
+import {Home} from "./public-pages/Home";
 
 const routes: Array<ComponentRouteListItem> = [
     {
