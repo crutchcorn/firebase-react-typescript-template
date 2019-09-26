@@ -34,8 +34,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.1.4",
-    "firebase-mock": "^2.2.10"
+    "@testing-library/react": "^9.1.4"
   },
   "eslintConfig": {
     "extends": "react-app"

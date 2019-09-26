@@ -12,7 +12,7 @@ it('renders the home page without logging in', async () => {
   expect(await findByText('Hi, y\'all')).toBeInTheDocument();
 });
 
-it('handles the login page errors properly', async () => {
+it('handles the login page properly, failed login, actual login', async () => {
   const {findByText, findByLabelText} = render(<App/>);
   fireEvent.click(await findByText('Login'));
   expect(window.location.pathname).toBe('/login');
@@ -38,5 +38,12 @@ it('handles the login page errors properly', async () => {
   // Once there is input, undo the reset button disable state
   expect(await findByText('Reset')).not.toBeDisabled();
   fireEvent.click(await findByText('Submit'));
+  // Value is from the __mock__/firebase.ts file
+  expect(await findByText('There is no user with that email')).toBeInTheDocument();
+  // Let's see if logging in with a prevalidated user (in __mock__/firebase.ts again) works
+  fireEvent.change(passwordInput, {target: {value: 'shouldwork'}});
+  fireEvent.change(emailInput, {target: {value: 'works@example.com'}});
+  fireEvent.click(await findByText('Submit'));
   await wait(1);
+  expect(await findByText('Log Out')).toBeInTheDocument();
 });
