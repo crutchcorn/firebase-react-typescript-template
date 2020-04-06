@@ -2,7 +2,11 @@
   "name": "firebase-react-templ",
   "version": "0.0.2",
   "description": "A baseline React template with Firebase functions, database rules, simple auth, and general project structure",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client-src",
+    "functions"
+  ],
   "author": "Corbin Crutchley <crutchcorn@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/crutchcorn/firebase-react-templ",
@@ -17,14 +21,36 @@
     "build:client": "run-s runbuild:client copy:client",
     "build:functions": "npm --prefix ./functions run build",
     "runbuild:client": "npm --prefix ./client-src run build",
-    "copy:client": "cd client-src/build && copyfiles -a \"**/*\" ../../public/ && cd ../.."
+    "copy:client": "cd client-src/build && copyfiles -a \"**/*\" ../../public/ && cd ../..",
+    "lint": "run-s lint:*",
+    "lint:client": "cd client-src && npm run lint",
+    "lint:functions": "cd functions && npm run lint",
+    "format": "run-s format:*",
+    "format:client": "cd client-src && npm run format",
+    "format:functions": "cd functions && npm run format"
   },
   "dependencies": {
     "copyfiles": "^2.1.1"
   },
   "devDependencies": {
-    "node": "^8.16.1",
-    "npm-run-all": "^4.1.5"
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run format:client",
+      "npm run format:functions"
+    ]
   },
   "repository": {
     "type": "git",

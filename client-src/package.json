@@ -8,7 +8,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "eslint --fix ./src/**/*.{ts,tsx}",
+    "lint": "eslint ./src/**/*.{ts,tsx}"
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
@@ -35,9 +37,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.1.4"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

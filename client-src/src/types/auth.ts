@@ -23,7 +23,7 @@ export class User implements UserInfo {
     email: string | null = null;
     phoneNumber: string | null = null;
     photoURL: string | null = null;
-    providerId: string = '';
+    providerId = '';
     /**
      * The user's unique ID.
      */

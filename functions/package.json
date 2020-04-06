@@ -6,7 +6,8 @@
   "license": "MIT",
   "homepage": "https://github.com/crutchcorn/firebase-react-templ",
   "scripts": {
-    "lint": "tslint --project tsconfig.json",
+    "lint": "eslint ./src/**/*.ts",
+    "format": "eslint --fix ./src/**/*.ts",
     "build": "tsc",
     "serve": "npm run build && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
@@ -15,7 +16,6 @@
     "logs": "firebase functions:log"
   },
   "devDependencies": {
-    "tslint": "^5.20.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
@@ -23,6 +23,6 @@
     "firebase-functions": "^3.2.0"
   },
   "engines": {
-    "node": "8"
+    "node": "10"
   }
 }

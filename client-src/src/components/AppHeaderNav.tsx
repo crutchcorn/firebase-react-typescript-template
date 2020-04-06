@@ -17,7 +17,7 @@ export type ComponentRouteListItem = RouteType & {
 
 interface AppHeaderNavProps {
   disableLogo?: boolean;
-  links: RouteType[]
+  links: RouteType[];
 }
 const AppHeaderNav: FC<RouteComponentProps & AppHeaderNavProps> = ({links, children, location, disableLogo = false}) => {
   return <div>

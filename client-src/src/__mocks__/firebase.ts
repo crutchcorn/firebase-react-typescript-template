@@ -1,4 +1,3 @@
-// @ts-ignore
 import {FirebaseUser} from "../types/auth";
 
 jest.mock('firebase/auth', () => ({}));
@@ -20,7 +19,7 @@ jest.mock('firebase/app', () => {
         let uidNum = 0;
         const internalAuthData: {
             // Yes, we're not encrypting the password. PLEASE do not somehow use this in prod
-            [uid: string]: FirebaseUser & {password: string}
+            [uid: string]: FirebaseUser & {password: string};
         } = {};
 
         let authUID = 0;
@@ -46,7 +45,7 @@ jest.mock('firebase/app', () => {
                 // Async since the initial function returns a Promise
                 createUserWithEmailAndPassword: async (email: string, password: string) => {
                     // Make sure the new user has a unique UID
-                    const uid: string = `${++uidNum}`;
+                    const uid = `${++uidNum}`;
                     // Set the internal value to match `FirebaseUser` data + a password (to validate login attempts)
                     internalAuthData[uid] = {
                         password,

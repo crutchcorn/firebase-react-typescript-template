@@ -13,10 +13,10 @@ export interface AuthValidatorValues {
 export interface AuthValidatorProps {
     user: {
         email: string;
-        password: string,
-        passwordconfirm: string
-    }
-    register: boolean
+        password: string;
+        passwordconfirm: string;
+    };
+    register: boolean;
 }
 
 export type AuthValidatorSubmitType = WithFormikConfig<AuthValidatorProps, AuthValidatorValues>['handleSubmit'];

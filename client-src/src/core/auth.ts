@@ -3,12 +3,12 @@ import {AuthRoles, User, FirebaseUser, getUserValuesFromFirebaseUser} from "../t
 import { firebaseAuth, firebaseDb } from "./firebase";
 import { ComponentRouteListItem } from "../components/AppHeaderNav";
 
-interface IAuthContext {
+interface AuthContext {
   user: User | null;
-  changeUser: (user: User) => void
+  changeUser: (user: User) => void;
 }
 
-export const AuthContext = createContext<IAuthContext>({
+export const AuthContext = createContext<AuthContext>({
   user: null,
   changeUser: () => {}
 });
