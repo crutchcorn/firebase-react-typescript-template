@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App';
 import * as serviceWorker from './serviceWorker';
+import * as Yup from "yup";
+import yupPass from 'yup-password';
+yupPass(Yup);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

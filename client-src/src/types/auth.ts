@@ -1,8 +1,8 @@
-import {UserInfo} from "firebase";
+import firebase from "firebase";
 
 export type AuthRoles = "user" | "admin";
 
-export class User implements UserInfo {
+export class User implements firebase.UserInfo {
     constructor(props: Partial<User> & {uid: string}) {
         this.uid = props.uid;
         if (props.displayName) this.displayName = props.displayName;
@@ -43,7 +43,7 @@ export class User implements UserInfo {
     }
 }
 
-export const getUserValuesFromFirebaseUser = (user: UserInfo) => {
+export const getUserValuesFromFirebaseUser = (user: firebase.UserInfo) => {
     const {
         displayName,
         email,
@@ -63,4 +63,4 @@ export const getUserValuesFromFirebaseUser = (user: UserInfo) => {
     };
 };
 
-export type FirebaseUser = UserInfo;
+export type FirebaseUser = firebase.UserInfo;

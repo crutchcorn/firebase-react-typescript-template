@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const parentConfig = require('../.eslintrc');
 
 module.exports = {
@@ -10,5 +11,8 @@ module.exports = {
         react: {
             version: "detect"
         }
+    },
+    rules: {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }

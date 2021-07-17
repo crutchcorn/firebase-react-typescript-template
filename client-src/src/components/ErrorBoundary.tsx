@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, ErrorInfo} from 'react';
 
 export default class ErrorBoundary extends Component {
   state = {
@@ -11,7 +11,7 @@ export default class ErrorBoundary extends Component {
     return { hasError: true, error: JSON.stringify(error).slice(0, 300)};
   }
 
-  componentDidCatch(error: Error, info: any) {
+  componentDidCatch(error: Error, info: ErrorInfo) {
     // You can also log the error to an error reporting service
     console.error(error, info);
   }
